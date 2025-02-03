@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Entiers entre 1 et {{ limit }}</h1>
+    <ul>
+        {% for i in 1..limit %}
+            <li>{{ i }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
