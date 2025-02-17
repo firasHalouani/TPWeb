@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <article>
-        <h2>Article ID : {{ article_id }}</h2>
-        <div class="metadata">Edité le 06/02/2022</div>
-        <div class="content">
-            <img src="http://placehold.it/100" alt="">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem debitis maiores facilis exercitationem quas explicabo.</p>
-            <p>Sequi molestiae natus voluptates blanditiis dolores nihil earum amet, vel dignissimos voluptatem, beatae animi quos.</p>
-        </div>
-    </article>
+<article>
+<h2>{{article.title}} </h2>
+<div class="metadata">Edité le {{article.createdAt |
+date("m/d/Y")}} à {{article.createdAt | date("h/i")}}</div>
+<div class="content">
+<img src="{{article.image}}" alt="">
+{{article.content | raw }}
+</div>
+</article>
 {% endblock %}
